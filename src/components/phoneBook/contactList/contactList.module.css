@@ -1,0 +1,22 @@
+.container {
+  width: 520px;
+  min-height: 35px;
+  display: inline-block;
+  /* text-align: center; */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerUl {
+  padding: 0;
+}
+
+.itemElement {
+  width: 200px;
+  display: flex;
+  align-items: center;
+}

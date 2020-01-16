@@ -1,0 +1,18 @@
+.container {
+  width: 520px;
+  height: 75px;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+}
+
+.title {
+  margin: 0;
+  text-align: left;
+}
+
+.input {
+  width: 500px;
+  display: block;
+}

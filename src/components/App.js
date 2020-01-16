@@ -1,7 +1,8 @@
 import React from "react";
+import PhoneBook from "./phoneBook/PhoneBook";
 
 function App() {
-  return <div>hello</div>;
+  return <PhoneBook />;
 }
 
 export default App;
