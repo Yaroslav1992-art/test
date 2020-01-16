@@ -1,5 +1,5 @@
 .container {
-  width: 520px;
+  width: 290px;
   min-height: 35px;
   display: inline-block;
   /* text-align: center; */
@@ -16,7 +16,26 @@
 }
 
 .itemElement {
-  width: 200px;
+  width: 270px;
   display: flex;
   align-items: center;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 520px;
+    min-height: 35px;
+    display: inline-block;
+    /* text-align: center; */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .itemElement {
+    width: 500px;
+    display: flex;
+    align-items: center;
+  }
 }

@@ -1,5 +1,5 @@
 .container {
-  width: 500px;
+  width: 270px;
   height: 200px;
   display: inline-block;
   text-align: center;
@@ -9,14 +9,33 @@
 }
 
 .input {
-  width: 500px;
+  width: 270px;
   display: block;
 }
 
 .button {
-  width: 500px;
+  width: 270px;
 }
 
 .wrapper {
   margin-bottom: 25px;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 500px;
+    height: 200px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    margin-bottom: 25px;
+  }
+  .input {
+    width: 500px;
+    display: block;
+  }
+
+  .button {
+    width: 500px;
+  }
 }

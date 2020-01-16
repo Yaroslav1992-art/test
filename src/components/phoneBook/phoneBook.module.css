@@ -3,5 +3,15 @@
   top: 12%;
   left: 50%;
   transform: translateX(-50%);
-  width: 550px;
+  width: 310px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 550px;
+  }
 }

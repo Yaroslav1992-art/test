@@ -1,5 +1,5 @@
 .container {
-  width: 520px;
+  width: 290px;
   height: 75px;
   display: inline-block;
   text-align: center;
@@ -13,6 +13,21 @@
 }
 
 .input {
-  width: 500px;
+  width: 270px;
   display: block;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 520px;
+    height: 75px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+  }
+  .input {
+    width: 500px;
+    display: block;
+  }
 }
