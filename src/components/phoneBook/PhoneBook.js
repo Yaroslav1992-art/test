@@ -5,6 +5,7 @@ import Filter from "./filter/Filter";
 import ContactList from "./contactList/ContactList";
 import services from "../../services/services";
 import Title from "./title/Title";
+import Alert from "../alert/Alert";
 import popTransition from "../transitions/pop.module.css";
 import slideTransition from "../transitions/slide.module.css";
 import css from "./phoneBook.module.css";
@@ -14,21 +15,23 @@ class PhoneBook extends Component {
     contacts: [],
     filter: "",
     isFilterNead: false,
-    isLogo: false
+    isLogo: false,
+    alertName: null,
+    alertFlag: false
   };
 
   pushContacts = (x, y, e) => {
     e.persist();
     console.log(e.target.elements[1]);
     if (e.target.name.value === "") {
-      alert("enter value");
+      this.alert("enter name");
       return;
     }
     const flag = this.state.contacts.find(
       ev => e.target.name.value === ev.name
     );
     flag
-      ? alert(`${e.target.name.value} is already in contacts`)
+      ? this.alert(`${e.target.name.value} is already in contacts!!!`)
       : services
           .addItem({
             name: x,
@@ -37,6 +40,13 @@ class PhoneBook extends Component {
           .finally(() => {
             this.fetchPost();
           });
+  };
+
+  alert = name => {
+    this.setState({ alertName: name, alertFlag: true });
+    setTimeout(() => {
+      this.setState({ alertName: "", alertFlag: false });
+    }, 3000);
   };
 
   handleInputSearch = e => {
@@ -58,7 +68,6 @@ class PhoneBook extends Component {
   fetchPost = async () => {
     try {
       const response = await services.getAllItems();
-      // console.log(response);
       if (response.data === null) {
         this.setState({
           contacts: []
@@ -99,9 +108,24 @@ class PhoneBook extends Component {
   }
 
   render() {
-    const { contacts, filter, isFilterNead, isLogo } = this.state;
+    const {
+      contacts,
+      filter,
+      isFilterNead,
+      isLogo,
+      alertName,
+      alertFlag
+    } = this.state;
     return (
       <>
+        <CSSTransition
+          in={alertFlag}
+          timeout={250}
+          classNames={slideTransition}
+          unmountOnExit
+        >
+          <Alert title={`${alertName} `} />
+        </CSSTransition>
         <CSSTransition
           in={isLogo}
           timeout={250}

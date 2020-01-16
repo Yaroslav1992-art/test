@@ -1,0 +1,14 @@
+.wrapper {
+  position: absolute;
+  top: 2%;
+  right: 0;
+  /* transform: translateX(-50%); */
+  width: 350px;
+  /* height: 65px; */
+  background-color: palevioletred;
+  border-radius: 5px;
+  text-align: center;
+  padding: 22px;
+  color: white;
+  font-size: 18px;
+}

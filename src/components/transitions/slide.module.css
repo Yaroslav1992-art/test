@@ -6,7 +6,7 @@
 .enterActive {
   opacity: 1;
   transform: translateX(0);
-  transition: opacity 250ms ease-in-out, transform 200ms ease-in-out;
+  transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
 }
 
 .exit {
@@ -17,5 +17,5 @@
 .exitActive {
   opacity: 0;
   transform: translateX(-100%);
-  transition: opacity 250ms ease-in-out, transform 200ms ease-in-out;
+  transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
 }
