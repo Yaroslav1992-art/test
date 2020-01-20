@@ -5,8 +5,6 @@ import css from "./contactList.module.css";
 import ContactItem from "./contactItem/ContactItem";
 import slideTransition from "../../transitions/slide.module.css";
 
-console.log(slideTransition);
-
 class ContactList extends Component {
   static propTypes = {
     deleteContact: PropTypes.func.isRequired,
@@ -41,13 +39,19 @@ class ContactList extends Component {
               </CSSTransition>
             ))
           : newArr.map(e => (
-              <ContactItem
+              <CSSTransition
                 key={e.id}
-                onHandleClickDelete={this.onHandleClickDelete}
-                object={e}
-              />
+                timeout={250}
+                classNames={slideTransition}
+                unmountOnExit
+              >
+                <ContactItem
+                  // key={e.id}
+                  onHandleClickDelete={this.onHandleClickDelete}
+                  object={e}
+                />
+              </CSSTransition>
             ))}
-        {/* </ul> */}
       </TransitionGroup>
     );
   }
